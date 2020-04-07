@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+$primary: #2A363B;
+
+body {
+    margin: 0;
+    font-family: 'Nunito','sans-serif';
+    font-size: 18px;
+    background-color: #FCF8F9;
+    display: flex;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    padding: 1em 0;
+    display: flex;
+    background-color: #FCF8F9;
+    flex-direction: column;
+
+    .container {
+        display: flex;
+        background-color: #FCF8F9;
+        
+    }
+
+    .logo {
+        font-weight: bold;
+        float: left;
+        background-color: #FCF8F9;
+
+    }
+
+    .button {
+        background-color: #963846;
+        color: #FCF8F9;
+        font-weight: bold;
+        justify-content: space-around;
+        text-decoration: none;
+        margin-right: 1em;
+        margin-left: 1em;
+        border-radius: 15px;
+    }
+
+
+    a {
+        color: #963846;
+        text-decoration: none;
+        float: right;
+        
+    }
+    .menu-spacer {
+        flex: 1 1 auto;
+      }
+
+    .page{
+        float: right;
+        margin-right: 1em;
+        margin-left: 1em;
+        border-radius: 15px;
+        background-color: #FCF8F9;
+        color: #2A363B;
+        font-weight: bold;
+    }
+
+    .toolbar {
+        display: flex;
+        background-color: #FCF8F9;
+        padding: 0px;
+
+     }
+    
+}
+
+footer{
+        padding-bottom: 1em;
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        margin: 0 auto;
+
+
+        .boxes{
+        display: flex;
+        flex-direction: row;
+
+            .box{
+                margin-right: 2em;
+                margin-left: 2em;
+                justify-content: space-around;
+
+              }
+        
+
+         }
+        .logo_mic {
+            font-weight: bold;
+            float: left;
+            background-color: #FCF8F9;
+        }
+
+        a {
+            color: #963846;
+            text-decoration: none;
+            float: right;
+            
+        }
+}
+
