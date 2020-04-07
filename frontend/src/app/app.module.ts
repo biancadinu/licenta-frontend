@@ -7,15 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from './material/material.module';
 import { ContactComponent } from './contact/contact.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
 import { AboutComponent } from './about/about.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
 import { SymptomsComponent } from './symptoms/symptoms.component';
-
-
+import {MatRadioModule} from '@angular/material/radio';
+import {MatStepperModule} from '@angular/material/stepper'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +33,10 @@ import { SymptomsComponent } from './symptoms/symptoms.component';
     MatFormFieldModule,
     MatInputModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    MatRadioModule,
+    MatStepperModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

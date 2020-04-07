@@ -1,0 +1,26 @@
+.main-symptoms-form{
+    width: 60%;
+    align-self: center;
+    margin:0 auto;
+}
+
+.introduction{
+    display: flex;
+    flex-direction: row;
+}
+
+.man{
+    font-size: 5em;
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+.woman{
+    margin-left:1em;
+    font-size: 5em;
+    cursor: pointer;
+}
+
+.sex-clickable{
+    cursor: pointer;
+}
