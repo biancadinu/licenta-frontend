@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-symptoms',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SymptomsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private _formBuilder: FormBuilder) { }
+  sexAndAgeFormGroup: FormGroup;
   ngOnInit() {
+    this.sexAndAgeFormGroup = this._formBuilder.group({
+      sex: ['', Validators.required],
+      age: ['', Validators.required],
+    })
   }
 
 }

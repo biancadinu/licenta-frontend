@@ -1,1 +1,45 @@
-<p>symptoms works!</p>
+<div class="main-symptoms-form">
+    <mat-vertical-stepper [linear]="False">
+        <mat-step>
+            <ng-template matStepLabel>Introduction</ng-template>
+            <div class="introduction">
+                <span>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                </span>
+                <img src="../../assets/symptom_guy.png">
+            </div>
+            <div>
+                <button mat-button>Back</button>
+                <button mat-button>Next</button>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="sexAndAgeFormGroup">
+            <ng-template matStepLabel>Patient</ng-template>
+            <div class="patient">
+                <span>
+                    Please select your sex:
+                </span>
+                <div class="choices">
+                    <a class="sex-clickable">
+                        <mat-icon class="man">accessibility</mat-icon>
+                    </a>
+                    <a class="sex-clickable">
+                        <mat-icon class="woman">pregnant_woman</mat-icon>
+                    </a>
+                </div>
+                <div>
+                    <button mat-button>Back</button>
+                    <button mat-button>Next</button>
+
+                </div>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Statements</ng-template>
+            <div>
+                
+            </div>
+        </mat-step>
+    </mat-vertical-stepper>
+</div>
