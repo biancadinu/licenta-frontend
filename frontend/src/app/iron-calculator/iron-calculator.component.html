@@ -1,0 +1,60 @@
+<main>
+    <div class="header">
+        <span class="diet">Diet & Anemia Management</span>
+        <span class="iron-calc">IRON CALCULATOR</span>
+        <div class="icons">
+            <fa-icon class="title-icon" [icon]="carrotIcon"></fa-icon>
+            <fa-icon class="title-icon" [icon]="birthdayCakeIcon"></fa-icon>
+            <fa-icon class="title-icon" [icon]="pizzaSliceIcon"></fa-icon>
+            <fa-icon class="title-icon" [icon]="fishIcon"></fa-icon>
+        </div>
+    </div>
+        <div class="container">
+            <span class="description">Get the nutrition fact for over 37,000 food and drinks. Then add them to your Daily Totals to see how your iron adds up!</span>
+            <div class="search_box">
+                <span class="title">Search Food</span>
+                    <input type="text" placeholder="e.g. apples or Arby's">
+                    <fa-icon class="search" [icon]="searchIcon"></fa-icon>
+            </div>
+            <div class="under-search-bar">
+                <span class="tip">TIP: Add a brand or restaurant name to get better results.</span>
+                <div class="select margin-class">
+                    <span class="title">Select a Food</span>
+
+                </div>
+                <div class="your-food margin-class">
+                    <span class="title">Your Food</span>
+
+                </div>
+                <div class="margin-class">
+                    <span class="title-amount">Amount</span>
+                    <input class="amount-number" type="number" min="0">
+                    <span class="serving">Serving(s)</span>
+                    <button mat-raised-button>Calculate</button>
+
+                </div>
+                <div class="consumption">
+                    <span class="title">You have consumed</span>
+                    <div class="tab">
+                    </div>
+                </div>
+                <div class="view">
+                    <button mat-button class="nutritional-facts-button" (click)=showFactsDialog()>View Nutritional Facts</button>  
+                </div>
+            </div>
+        </div>
+        <div class="footer-container">
+            <mat-tab-group>
+                <mat-tab label="Popular Foods">
+                    
+                </mat-tab>
+                <mat-tab label="Popular Brands">
+                    
+                </mat-tab>
+            </mat-tab-group>
+
+
+        </div>
+
+</main>
+<div class="footer"></div>

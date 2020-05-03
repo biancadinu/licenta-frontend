@@ -4,8 +4,10 @@
             <ng-template matStepLabel>Introduction</ng-template>
             <div class="introduction">
                 <span>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-                    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    <h2>Hello!</h2>
+                    <p>
+                        You’re about to use a short (3 min), safe and anonymous anemia checkup. Your answers will be carefully analyzed and you’ll learn if you are in really need of a specialist.      
+                    </p>
                 </span>
                 <img src="../../assets/symptom_guy.png">
             </div>
@@ -17,18 +19,23 @@
         <mat-step [stepControl]="sexAndAgeFormGroup">
             <ng-template matStepLabel>Patient</ng-template>
             <div class="patient">
-                <span>
+                <span class="select">
                     Please select your sex:
                 </span>
                 <div class="choices">
-                    <a class="sex-clickable">
-                        <mat-icon class="man">accessibility</mat-icon>
-                    </a>
-                    <a class="sex-clickable">
-                        <mat-icon class="woman">pregnant_woman</mat-icon>
-                    </a>
+
+                    <input type="radio" name="gender" id="female">
+                    <label for="female">
+                        <i class="fa fa-female" aria-hidden="true"></i>
+                        <span>Female</span>
+                    </label>
+                    <input type="radio" name="gender" id="male">
+                    <label for="male">
+                    <i class="fa fa-male" aria-hidden="true"></i>
+                    <span>Male</span>
+                    </label>
                 </div>
-                <div>
+                <div class="choices-buttons">
                     <button mat-button>Back</button>
                     <button mat-button>Next</button>
 
@@ -37,9 +44,106 @@
         </mat-step>
         <mat-step>
             <ng-template matStepLabel>Statements</ng-template>
+            <div class="statements">
+                <span>
+                    <h2>Please check all the statements below that apply to you</h2>
+                     Select one answer in each row.
+                    
+                </span>
+                <div class="questions">
+                    <mat-list>
+                        <div class="list-element">
+                            <mat-list-item>I'm pregnant</mat-list-item>
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button value="1">Yes</mat-radio-button>
+                                <mat-radio-button value="2">No</mat-radio-button>
+                                <mat-radio-button value="3">Don't know</mat-radio-button>
+                          </mat-radio-group>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="list-element">
+                            <mat-list-item>I'm overweight or obese</mat-list-item>
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button value="1">Yes</mat-radio-button>
+                                <mat-radio-button value="2">No</mat-radio-button>
+                                <mat-radio-button value="3">Don't know</mat-radio-button>
+                          </mat-radio-group>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="list-element">
+                            <mat-list-item>I smoke cigarettes</mat-list-item>
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button value="1">Yes</mat-radio-button>
+                                <mat-radio-button value="2">No</mat-radio-button>
+                                <mat-radio-button value="3">Don't know</mat-radio-button>
+                          </mat-radio-group>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="list-element">
+                            <mat-list-item>I've been recently injured</mat-list-item>
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button value="1">Yes</mat-radio-button>
+                                <mat-radio-button value="2">No</mat-radio-button>
+                                <mat-radio-button value="3">Don't know</mat-radio-button>
+                          </mat-radio-group>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="list-element">
+                            <mat-list-item>I have high cholesterol</mat-list-item>
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button value="1">Yes</mat-radio-button>
+                                <mat-radio-button value="2">No</mat-radio-button>
+                                <mat-radio-button value="3">Don't know</mat-radio-button>
+                          </mat-radio-group>
+                        </div>
+                        <mat-divider></mat-divider>
+                        <div class="list-element">
+                            <mat-list-item>I have hypertension</mat-list-item>
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button value="1">Yes</mat-radio-button>
+                                <mat-radio-button value="2">No</mat-radio-button>
+                                <mat-radio-button value="3">Don't know</mat-radio-button>
+                          </mat-radio-group>
+                        </div>
+                      </mat-list>
+
+                </div>
+                  
+            </div>
             <div>
-                
+                <button mat-button>Back</button>
+                <button mat-button>Next</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Symptoms</ng-template>
+            <div class="symptoms">
+                <span>
+                    <h2>Add your symptoms</h2>
+                </span>
+            </div>
+            <div class="effects">
+                <mat-form-field>
+                    <mat-label>Symptoms</mat-label>
+                    <mat-select [formControl]="symptoms" multiple>
+                      <mat-select-trigger>
+                        {{symptoms.value ? symptoms.value[0] : ''}}
+                        <span *ngIf="symptoms.value?.length > 1" class="example-additional-selection">
+                          (+{{symptoms.value.length - 1}} {{symptoms.value?.length === 2 ? 'other' : 'others'}})
+                        </span>
+                      </mat-select-trigger>
+                      <mat-option *ngFor="let symptom of symptomsList" [value]="symptom">{{symptom}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+            <div>
+                <button mat-button>Back</button>
+                <button mat-button>Next</button>
             </div>
         </mat-step>
     </mat-vertical-stepper>
 </div>
+<div class="result">
+    <button mat-raised-button class="button">Do I need to see a doctor?</button>
+</div>
+<div class="footer"></div>

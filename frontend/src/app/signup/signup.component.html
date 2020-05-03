@@ -1,0 +1,30 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+        <div class="formular">
+            <mat-form-field class="form-row">
+            <input matInput type="text" formControlName="username" placeholder="Username" name="username" id="username">
+            </mat-form-field>
+            <mat-form-field class="form-row">
+            <input matInput type="text" formControlName="password" placeholder="Password" name="password" id="password" type="password">
+            </mat-form-field>
+            <mat-form-field class="form-row">
+            <input matInput type="text" formControlName="email" placeholder="Email" name="email" id="password">
+            </mat-form-field>
+            
+            <div class="signup-buttons">
+                <button type="button" mat-button class="dialog-option">Sign Up</button>
+                <span class="space"></span>
+                <button type="button" (click)="exitDialog()" mat-button class="dialog-option">Cancel</button>
+            </div>
+        </div>
+        <span class="or">OR</span>
+        <br>
+        <div class="social-buttons-container">
+            <button mat-raised-button class="button social-button" style="background-color: #385998; border-color: #385998;" (click)="facebooklogin()"><i class="fa fa-facebook"></i>  Facebook  </button>
+            <button mat-raised-button class="button social-button" style="background-color: #C63D2D; border-color: #C63D2D;"(click)="googlelogin()" ><i class="fa fa-google"></i>  Google  </button>
+            <button mat-raised-button class="button social-button" style="background-color: #4875B4; border-color: #4875B4;" (click)="linkedinlogin()"><i class="fa fa-linkedin"></i>  LinkedIn  </button>
+       </div>
+    </div>
+    
+    
+</form>

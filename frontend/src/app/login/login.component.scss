@@ -1,0 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,300,500);
+*:focus {
+  outline: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #DDD;
+  font-size: 16px;
+  color: #222;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+.or{
+    margin-left: 2em;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  
+    .formular{
+      display: flex;
+      flex-direction: column;
+  
+      .login-buttons{
+        //display: flex;
+        //flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        margin: 0 auto;
+  
+        .space{
+          margin-left: 1em;
+          margin-right: 1em;
+        }
+  
+        .mat-button{
+         // margin-left: 1em;
+          //margin-right: 1em;
+          border-style: bold;
+          background-color: #963846;
+          color: #FCF8F9;
+          font-weight: bold;
+          border-radius: 15px;
+          align-items: center;
+         
+      }
+      }
+  
+    }
+  
+  }
+  
+  .social-login-buttons{
+    margin-left: 2em;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+  
+    button{
+      border: white;
+      border-style: bold;
+      background-color: #963846;
+      color: #FCF8F9;
+      font-weight: bold;
+      //margin: 0 auto;
+      border-radius: 15px;
+    }
+  
+    .social-button{
+      margin-bottom: 2em;
+    }
+  }

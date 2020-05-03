@@ -1,1 +1,22 @@
-<p>contact works!</p>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="help-text-container">
+      <span>By submiting this form you can send us suggestions for improving the platform. Ideas, observations or news regarding anemia are also more than welcome. Thank you!</span>
+    </div>
+    <mat-form-field class="form-row">
+      <input matInput type="email" formControlName="email" placeholder="Email" name="email" id="email">
+    </mat-form-field>
+  
+    <mat-form-field class="form-row">
+      <input matInput type="text" formControlName="subject" placeholder="Title" name="subject" id="subject">
+    </mat-form-field>
+  
+    <mat-form-field class="form-row">
+      <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows=10 cdkAutosizeMaxRows=16 formControlName="body" placeholder="Content" name="body" id="body"></textarea>
+    </mat-form-field>
+  
+    <div class="contact-buttons">
+      <button type="submit" mat-button class="dialog-option" [disabled]="!contactForm.valid">Send</button>
+      <button type="button" (click)="exitDialog()" mat-button class="dialog-option">Cancel</button>
+    </div>
+  </form>
+  

@@ -1,5 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+
+// used to create fake backend
+import { fakeBackendProvider } from './_helpers';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,22 +13,65 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { MaterialModule } from './material/material.module';
 import { ContactComponent } from './contact/contact.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material';
+import { MatInputModule, MatDialogModule } from '@angular/material';
 import { AboutComponent } from './about/about.component';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatIconModule} from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
 import { SymptomsComponent } from './symptoms/symptoms.component';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatStepperModule} from '@angular/material/stepper'; 
+import { MatRadioModule } from '@angular/material/radio';
+import { MatStepperModule } from '@angular/material/stepper'; 
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatSelectModule } from '@angular/material/select';
+import { LoginComponent } from './login/login.component';
+import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider, FacebookLoginProvider, LinkedinLoginProvider } from 'ng4-social-login';
+import { SignupComponent } from './signup/signup.component';
+import { IronCalculatorComponent } from './iron-calculator/iron-calculator.component';
+import { NutritionalFactsComponent } from './iron-calculator/nutritional-facts/nutritional-facts.component';
+import { RecipesComponent } from './recipes/recipes.component';
+const config = new AuthServiceConfig([
+{
+  id: GoogleLoginProvider.PROVIDER_ID,
+  provider: new GoogleLoginProvider('854996818669-c9vp31oum6uoefjs1qntll51rdojurur.apps.googleusercontent.com'),
+},  
+{
+  id: FacebookLoginProvider.PROVIDER_ID,
+  provider: new FacebookLoginProvider('219307636068696'),
+}, 
+{
+  id: LinkedinLoginProvider.PROVIDER_ID,
+  provider: new LinkedinLoginProvider('867lu3xsgw3ixf'),
+} 
+
+], false);
+
+export function provideConfig() {
+  return config;
+}
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ContactComponent,
     AboutComponent,
-    SymptomsComponent
+    SymptomsComponent,
+    LoginComponent,
+    SignupComponent,
+    IronCalculatorComponent,
+    NutritionalFactsComponent,
+    RecipesComponent,
+  ],
+  entryComponents: [ 
+    LoginComponent, 
+    ContactComponent,
+    SignupComponent,
+    IronCalculatorComponent,
+    NutritionalFactsComponent
   ],
   imports: [
     BrowserModule,
@@ -37,8 +86,21 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatRadioModule,
     MatStepperModule,
     ReactiveFormsModule,
+    MatDividerModule,
+    MatListModule,
+    MatAutocompleteModule,
+    MatSelectModule,
+    HttpClientModule,
+    MatDialogModule,
+    SocialLoginModule,
+    FontAwesomeModule,
   ],
-  providers: [],
+  //providers: [],
+    providers: [
+    // provider used to create fake backend
+    fakeBackendProvider,
+    {provide :AuthServiceConfig, useFactory: provideConfig}
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
