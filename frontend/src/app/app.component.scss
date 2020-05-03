@@ -24,6 +24,7 @@ header {
 
     .container {
         display: flex;
+        flex-direction: row;
         background-color: #FCF8F9;
         
     }
@@ -32,6 +33,9 @@ header {
         font-weight: bold;
         float: left;
         background-color: #FCF8F9;
+        align-items: center;
+        justify-content: center;
+        
 
     }
 
@@ -51,10 +55,14 @@ header {
         color: #963846;
         text-decoration: none;
         float: right;
+        align-self: center;
+        justify-content: center;
         
     }
     .menu-spacer {
         flex: 1 1 auto;
+        margin-left: 1em;
+        margin-right: 14em;
       }
 
     .page{
@@ -71,6 +79,7 @@ header {
         display: flex;
         background-color: #FCF8F9;
         padding: 0px;
+        float: right;
 
      }
     
@@ -80,14 +89,16 @@ footer{
         padding-bottom: 1em;
         display: flex;
         flex-direction: row;
-        width: 100%;
+        width: 80%;
         margin: 0 auto;
         position: fixed;
         text-align: center;
         bottom: 0;
         background-color: #FCF8F9;
         left: 0;
-
+        padding-top: 1em;
+        padding-left: 12em;
+        padding-right: 12em;
 
         .boxes{
         display: flex;

@@ -1,0 +1,26 @@
+.form-row {
+    display: block;
+    padding: 25px;
+  }
+  
+  .mat-button{
+    background-color: #963846;
+    color: #FCF8F9;
+    font-weight: bold;
+    border-radius: 15px;
+  }
+  
+  .contact-buttons{
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    display: inline-flex;
+  }
+  
+  .help-text-container{
+    padding: 0.5em;
+    background-color: #963846;
+    color: #FCF8F9;
+    text-align: center;
+    border-radius: 15px;
+  }
