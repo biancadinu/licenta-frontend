@@ -89,37 +89,41 @@ footer{
         padding-bottom: 1em;
         display: flex;
         flex-direction: row;
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
-        position: fixed;
         text-align: center;
         bottom: 0;
-        background-color: #FCF8F9;
-        left: 0;
+        background-color: #963846;
+        color: #FCF8F9;
+        position: fixed;
         padding-top: 1em;
-        padding-left: 12em;
-        padding-right: 12em;
+        z-index: 3;
 
         .boxes{
         display: flex;
         flex-direction: row;
+        margin: 0 auto;
 
             .box{
-                margin-right: 2em;
-                margin-left: 2em;
+                margin-right: 10em;
+                margin-left: 10em;
                 justify-content: space-around;
-
+                display: flex;
+                flex-direction: column;
+                font-weight: bold;
+                align-content: center;
+                align-self: center;
               }
         
-
+              .logo_mic {
+                margin-right: 10em;
+                font-weight: bold;
+                align-self: center;
+            }
          }
-        .logo_mic {
-            font-weight: bold;
-            float: left;
-        }
 
         a {
-            color: #963846;
+            color: #FCF8F9;
             text-decoration: none;
             float: right;
             
