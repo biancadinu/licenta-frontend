@@ -32,6 +32,7 @@ import { SignupComponent } from './signup/signup.component';
 import { IronCalculatorComponent } from './iron-calculator/iron-calculator.component';
 import { NutritionalFactsComponent } from './iron-calculator/nutritional-facts/nutritional-facts.component';
 import { RecipesComponent } from './recipes/recipes.component';
+import { RecipeComponent } from './recipes/recipe/recipe.component';
 const config = new AuthServiceConfig([
 {
   id: GoogleLoginProvider.PROVIDER_ID,
@@ -65,6 +66,7 @@ export function provideConfig() {
     IronCalculatorComponent,
     NutritionalFactsComponent,
     RecipesComponent,
+    RecipeComponent,
   ],
   entryComponents: [ 
     LoginComponent, 

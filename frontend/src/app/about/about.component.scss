@@ -2,20 +2,15 @@
 
 $primary: #2A363B;
 
-body {
-    margin: 0;
-    font-family: 'Nunito','sans-serif';
-    font-size: 18px;
-    background-color: #FCF8F9;
-    display: flex;
-    flex-direction: column;
-}
 main{
-    background-color: #FCF8F9;
     padding: 1em 0;
     display: flex;
-    background-color: #FCF8F9;
     flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    background: rgb(247,234,236);
+    border-radius: 30px;
+    border: 2px solid #fff;
 
     .up {
         width: 80%;
@@ -24,9 +19,19 @@ main{
         display: flex;
         flex-direction: row;
         margin: 0 auto;
+        margin-bottom: 1em;
+        
+        .text-container{
+            overflow: hidden;
+            margin-top: 2em;
+            .text {
+            }
+        }
 
-        .text {
-            padding: 2em 0;
+
+        mat-tab-group{
+            align-self: left;
+            width:80%;
         }
     }
 
