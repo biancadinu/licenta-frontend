@@ -12,10 +12,46 @@ body {
 }
 main{
     background-color: #FCF8F9;
-    padding: 1em 0;
     display: flex;
     background-color: #FCF8F9;
     flex-direction: column;
+
+    .banner{
+        height: 800px;
+        background-image: url('../../assets/background.png');
+        background-position: bottom;
+        background-size: cover;
+
+        .banner-text{
+            display: flex;
+            flex-direction: column;
+            margin-left: 10em;
+            justify-content: center;
+            height: 600px;
+            width: 600px;
+            font-weight: bold;
+
+            .banner-title{
+                font-size: 2em;
+                padding-bottom: 1em;
+            }
+
+            .banner-subtitle{
+                font-size: 1em;
+                color: white;
+                padding-bottom: 1em;
+            }
+
+            .button {
+                background-color: white;
+                color: #963846;
+                font-weight: bold;
+                margin: 0 auto;
+                margin-top: 3em;
+            }
+
+        }
+    }
 
     .menu-spacer {
         flex: 1 1 auto;
