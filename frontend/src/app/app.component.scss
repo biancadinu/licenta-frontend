@@ -6,37 +6,33 @@ body {
     margin: 0;
     font-family: 'Nunito','sans-serif';
     font-size: 18px;
-    background-color: #FCF8F9;
     display: flex;
 }
 
 .container {
+    background-color: #982727;
     width: 80%;
     margin: 0 auto;
 }
 
 header {
     width: 100%;
-    padding: 1em 0;
     display: flex;
-    background-color: #FCF8F9;
     flex-direction: column;
+    background-color: #982727;
 
     .container {
         display: flex;
         flex-direction: row;
-        background-color: #FCF8F9;
         
     }
 
     .logo {
         font-weight: bold;
         float: left;
-        background-color: #FCF8F9;
         align-items: center;
         justify-content: center;
-        
-
+        color:white;
     }
 
     .button {
@@ -52,7 +48,7 @@ header {
 
 
     a {
-        color: #963846;
+        color: white;
         text-decoration: none;
         float: right;
         align-self: center;
@@ -70,17 +66,15 @@ header {
         margin-right: 1em;
         margin-left: 1em;
         border-radius: 15px;
-        background-color: #FCF8F9;
         color: #2A363B;
         font-weight: bold;
     }
 
     .toolbar {
         display: flex;
-        background-color: #FCF8F9;
         padding: 0px;
         float: right;
-
+        background: #982727;
      }
     
 }
@@ -95,7 +89,6 @@ footer{
         bottom: 0;
         background-color: #963846;
         color: #FCF8F9;
-        position: fixed;
         padding-top: 1em;
         z-index: 3;
 
