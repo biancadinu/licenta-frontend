@@ -1,7 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 // used to create fake backend
@@ -15,12 +15,12 @@ import { MaterialModule } from './material/material.module';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule, MatDialogModule } from '@angular/material';
+import { MatInputModule, MatDialogModule, GestureConfig } from '@angular/material';
 import { AboutComponent } from './about/about.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { SymptomsComponent } from './symptoms/symptoms.component';
-import { MatRadioModule } from '@angular/material/radio';
+import { MatRadioModule, MatRadioGroup } from '@angular/material/radio';
 import { MatStepperModule } from '@angular/material/stepper'; 
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
@@ -37,6 +37,9 @@ import { FoodApiService } from './_services/food.service';
 import { DailyFoodListApiService } from './_services/daily-food-list.service';
 import { RecipeApiService } from './_services/recipe.service';
 import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.component';
+import { ErrorInterceptor } from './_helpers/error.interceptor';
+import { JwtInterceptor } from './_helpers/jwt.interceptor';
+import { MatSliderModule } from '@angular/material/slider';
 
 const config = new AuthServiceConfig([
 {
@@ -104,10 +107,14 @@ export function provideConfig() {
     SocialLoginModule,
     FontAwesomeModule,
     HttpClientModule,
+    MatSliderModule,
   ],
   //providers: [],
     providers: [
     // provider used to create fake backend
+    { provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     RecipeApiService,
     DailyFoodListApiService,
     FoodApiService,
