@@ -26,7 +26,6 @@ export class AppComponent {
 }
 
 public isUserLoggedIn(){
-  console.log(this.currentUser)
   if(this.currentUser){
     return true;
   }

@@ -120,6 +120,26 @@ main{
                 margin-top:1em;
                 padding-top: 1em;
                 padding-bottom: 1em;
+                .food-container{
+                    margin-top: 1em;
+                    width: 100%;
+                    border-top: 2px solid #963846;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    max-height: 300px;
+                    overflow: auto;
+                    .food-details{
+                        cursor: pointer;
+                        border-bottom: 1px dotted #963846;
+                        .food-facts{
+                            display: inline-flex;
+                        }
+                        .capitalize{
+                            text-transform: capitalize;
+                        }
+                    }
+                }
             }
 
             .tip{
@@ -133,15 +153,48 @@ main{
 
                 .tab{
                     background: rgb(247,234,236);
+                    display: flex;
                     width: 100%;
                     border-radius: 15px;
                     border: 2px solid #fff;
+                    align-items: center;
+                    justify-content: center;
+                    .consumption-info{
+                        display: flex;
+                        flex-direction: row;
+                        width: 100%;
+                        justify-content: space-around;
+                        color: #963846;
+                        .calories{
+                            font-size: 2em;
+                        }
+    
+                        .iron{
+                            font-size: 2em
+                        }
+                    }
                 }
             }
 
             .your-food{
                 padding-top: 1em;
                 padding-bottom: 1em;
+                
+                .picked-food-container{
+                    width: 50%;
+                    padding: .5em;
+                    background-color: rgb(247,234,236);
+                    border-radius: 15px;
+                    border: 2px solid #fff;
+                    display: flex;
+                    flex-direction: column;
+                    .food-facts{
+                        display: inline-flex;
+                    }
+                    .capitalize{
+                        text-transform: capitalize;
+                    }
+                }
             }
         }
 
