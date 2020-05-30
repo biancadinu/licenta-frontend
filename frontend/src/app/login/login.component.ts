@@ -69,7 +69,6 @@ export class LoginComponent implements OnInit {
 
   login() {
       this.submitted = true;
-
       // stop here if form is invalid
       if (this.loginForm.invalid) {
           return;
@@ -81,6 +80,7 @@ export class LoginComponent implements OnInit {
           .subscribe(
               data => {
                   this.router.navigate([this.returnUrl]);
+                  this.dialogRef.close()
               },
               error => {
                   this.error = error;
