@@ -33,6 +33,11 @@ import { IronCalculatorComponent } from './iron-calculator/iron-calculator.compo
 import { NutritionalFactsComponent } from './iron-calculator/nutritional-facts/nutritional-facts.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { RecipeComponent } from './recipes/recipe/recipe.component';
+import { FoodApiService } from './_services/food.service';
+import { DailyFoodListApiService } from './_services/daily-food-list.service';
+import { RecipeApiService } from './_services/recipe.service';
+import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.component';
+
 const config = new AuthServiceConfig([
 {
   id: GoogleLoginProvider.PROVIDER_ID,
@@ -67,13 +72,15 @@ export function provideConfig() {
     NutritionalFactsComponent,
     RecipesComponent,
     RecipeComponent,
+    RecipeDetailsComponent,
   ],
   entryComponents: [ 
     LoginComponent, 
     ContactComponent,
     SignupComponent,
     IronCalculatorComponent,
-    NutritionalFactsComponent
+    NutritionalFactsComponent,
+    RecipeDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -96,10 +103,14 @@ export function provideConfig() {
     MatDialogModule,
     SocialLoginModule,
     FontAwesomeModule,
+    HttpClientModule,
   ],
   //providers: [],
     providers: [
     // provider used to create fake backend
+    RecipeApiService,
+    DailyFoodListApiService,
+    FoodApiService,
     fakeBackendProvider,
     {provide :AuthServiceConfig, useFactory: provideConfig}
    ],

@@ -1,9 +1,13 @@
 <div class="recipe-container">
     <div>
-        Imagine aici
+        <img class='picture' src={{recipe.pictures}}>
     </div>
 
     <div>
-        Text aici
+        {{recipe.name}}
+    </div>
+
+    <div>
+        <button mat-raised-button [routerLink]="['/recipe', recipe.id]">Read</button>
     </div>
 </div>

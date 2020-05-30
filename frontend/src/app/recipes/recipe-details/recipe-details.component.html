@@ -1,0 +1,36 @@
+<main>
+    <div class="header">
+        <span class="title"> Recipe Title</span>
+        <img class='picture' src={{recipe.pictures}}>
+    </div>
+    <div  class="container">
+        <div class="info">
+            <div class="duration">
+                <fa-icon class="title-icon" [icon]="clockIcon"></fa-icon>
+                <span class="title-first">Duration : </span>
+            </div>
+            <div class="portions">
+                <fa-icon class="title-icon" [icon]="cheeseIcon"></fa-icon>
+                <span class="title-first">Portions : </span>
+            </div>
+            <div class="nutrition">
+                <fa-icon class="title-icon" [icon]="weightIcon"></fa-icon>
+                <span class="title-first">Calories : </span>
+                <span class="title-first"> Iron Intake : </span>
+            </div>
+        </div>
+        <div class="description">
+            <div class="ingredients">
+                <span class="border">Ingredients : </span>
+            </div>
+            <div class="method">
+                <span class="border">Cooking method : </span>
+            </div>
+            <div class="rating">
+                <span>Rating : </span>
+            </div>
+        </div>
+        <button mat-button >Add to my Recipes Folder</button>
+    </div>
+</main>
+<div class="footer"></div>
