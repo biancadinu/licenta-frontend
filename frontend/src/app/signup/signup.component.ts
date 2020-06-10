@@ -23,7 +23,10 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
         username: ['', Validators.required],
-        password: ['', Validators.required]
+        password: ['', Validators.required],
+        email: ['', Validators.required],
+        first_name: ['', Validators.required],
+        last_name:['',Validators.required],
     });
 
     // get return url from route parameters or default to '/'
@@ -46,6 +49,13 @@ export class SignupComponent implements OnInit {
       this.authenticationService.currentUser.subscribe(userData => this.currentUser = userData);
     }
   
+  }
+
+  public register(){
+    console.log(this.signupForm.value)
+    this.authenticationService.register(this.signupForm.value).subscribe(() =>{
+      this.dialogRef.close()
+    })
   }
 
     // convenience getter for easy access to form fields

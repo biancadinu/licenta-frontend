@@ -15,4 +15,12 @@ export class RecipeComponent implements OnInit {
   ngOnInit() {
   }
 
+  public removeFromFav(){
+    
+  }
+
+  public addToFav(){
+
+  }
+
 }
