@@ -3,6 +3,7 @@ import { Recipe } from 'src/app/model/recipe.model';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { faCheese } from '@fortawesome/free-solid-svg-icons';
 import { faWeight } from '@fortawesome/free-solid-svg-icons';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-details',
@@ -15,11 +16,14 @@ export class RecipeDetailsComponent implements OnInit {
   cheeseIcon = faCheese;
   weightIcon = faWeight;
 
-  @Input() recipe: Recipe;
+  recipe = null;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
+    this.route.params.subscribe(data => this.recipe = data)
   }
 
 }

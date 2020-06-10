@@ -7,6 +7,32 @@
     -webkit-box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.75);
+
+    .details-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 12em;
+        
+        .buttons{
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 12em;
+        }
+
+        .star{
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        .star-yellow{
+            font-size: 2em;
+            cursor: pointer;
+            color: orange;
+        }
+    }
 }
 
 .picture{

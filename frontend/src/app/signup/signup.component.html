@@ -8,11 +8,17 @@
             <input matInput type="text" formControlName="password" placeholder="Password" name="password" id="password" type="password">
             </mat-form-field>
             <mat-form-field class="form-row">
-            <input matInput type="text" formControlName="email" placeholder="Email" name="email" id="password">
+            <input matInput type="text" formControlName="email" placeholder="Email" name="email" id="email">
+            </mat-form-field>
+            <mat-form-field class="form-row">
+                <input matInput type="text" formControlName="first_name" placeholder="Fist Name" name="first_name" id="first_name">
+            </mat-form-field>
+            <mat-form-field class="form-row">
+                <input matInput type="text" formControlName="last_name" placeholder="Email" name="last_name" id="last_name">
             </mat-form-field>
             
             <div class="signup-buttons">
-                <button type="button" mat-button class="dialog-option">Sign Up</button>
+                <button type="button" (click)="register()" mat-button class="dialog-option">Sign Up</button>
                 <span class="space"></span>
                 <button type="button" (click)="exitDialog()" mat-button class="dialog-option">Cancel</button>
             </div>
