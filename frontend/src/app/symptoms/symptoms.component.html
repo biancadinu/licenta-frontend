@@ -6,7 +6,7 @@
                 <span>
                     <h2>Hello!</h2>
                     <p>
-                        You’re about to use a short (3 min), safe and anonymous anemia checkup. Your answers will be carefully analyzed and you’ll learn if you are in really need of a specialist.      
+                        You’re about to use a short (3 min), safe and anonymous anemia checkup. Your answers will be carefully analyzed and you’ll learn if you are in really need of a specialist.
                     </p>
                 </span>
                 <img src="../../assets/symptom_guy.png">
@@ -63,7 +63,7 @@
                 <span>
                     <h2>Please check all the statements below that apply to you</h2>
                      Select one answer in each row.
-                    
+
                 </span>
                 <form [formGroup]="formGroup" class="questions">
                     <mat-list [formGroup]="formGroup" formGroupName="statements">
@@ -123,7 +123,7 @@
                       </mat-list>
 
                 </form>
-                  
+
             </div>
             <div>
                 <button mat-button matStepperPrevious>Back</button>
@@ -138,7 +138,7 @@
                 </span>
             </div>
             <div [formGroup]="formGroup" class="effects">
-                <mat-form-field> 
+                <mat-form-field>
                     <mat-label>Symptoms</mat-label>
                     <mat-select formControlName="symptoms" multiple>
                       <mat-select-trigger>
@@ -162,7 +162,7 @@
 </div>
 <div class="results" *ngIf="isResults">
     <div class="contents">
-        Your daily iron intake should be {{ironIntake}}
+        Your daily iron intake should be {{ironIntake}} mg
         <div>
             {{doctor}}
         </div>
