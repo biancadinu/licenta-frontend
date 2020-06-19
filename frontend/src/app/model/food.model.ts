@@ -5,4 +5,5 @@ export interface Food{
     calories: number;
     serving_size_amount: number;
     serving_size_unit: string;
+    is_favorite: boolean;
 }

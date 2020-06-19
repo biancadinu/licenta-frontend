@@ -158,7 +158,7 @@
     </mat-vertical-stepper>
 </div>
 <div class="result">
-    <button (click)="results()" mat-raised-button class="button">Do I need to see a doctor?</button>
+    <button (click)="results()" [disabled]="formGroup.invalid" mat-raised-button class="button">Do I need to see a doctor?</button>
 </div>
 <div class="results" *ngIf="isResults">
     <div class="contents">

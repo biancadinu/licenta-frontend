@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="food-diary">
+    <div *ngFor="let food of foodList" class="food-details">
+      <div class="name-del"><p class="food-name capitalize">
+        {{food.food[0].name}}
+        {{food.food[0].description}}
+      </p>
+        <div class="delete-button">
+          <a (click)="removeFromDaily(food)">
+            <mat-icon>delete</mat-icon>
+          </a>
+        </div>
+      </div>
+
+      <div class="food-facts">
+        <div class="capitalize">{{food.food[0].iron}}</div>
+        mg |
+        <div class="capitalize"> {{food.food[0].calories}} </div>
+        calories | Serving Size: {{food.food[0].serving_size_amount}} {{food.food[0].serving_size_unit}}
+      </div>
+    </div>
+  </div>
+</div>

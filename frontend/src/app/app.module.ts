@@ -40,6 +40,7 @@ import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.
 import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { MatSliderModule } from '@angular/material/slider';
+import { ProfileComponent } from './profile/profile.component';
 
 const config = new AuthServiceConfig([
 {
@@ -76,6 +77,7 @@ export function provideConfig() {
     RecipesComponent,
     RecipeComponent,
     RecipeDetailsComponent,
+    ProfileComponent,
   ],
   entryComponents: [ 
     LoginComponent, 

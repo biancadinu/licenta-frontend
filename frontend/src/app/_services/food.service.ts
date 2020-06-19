@@ -12,4 +12,12 @@ export class FoodApiService{
     searchFood(foodName: string): Observable<Food[]>{
         return this.httpClient.get<Food[]>(this.baseUrl, {params:{search: foodName}});
     }
+
+  addToFav(foodId): Observable<any> {
+    return this.httpClient.post<any>(this.baseUrl + foodId + '/favorite/', {});
+  }
+
+  removeFav(foodId): Observable<any> {
+    return this.httpClient.delete<any>(this.baseUrl + foodId + '/remove-favorite/', {});
+  }
 }

@@ -1,20 +1,30 @@
-import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environment'
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Food } from '../model/food.model';
+import {Injectable} from '@angular/core';
+import {environment} from '../../environments/environment';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Food} from '../model/food.model';
 
 @Injectable()
-export class DailyFoodListApiService{
-    baseUrl = environment.baseUrl + 'daily-food-list/'
-    constructor(private httpClient: HttpClient){}
+export class DailyFoodListApiService {
+  baseUrl = environment.baseUrl + 'daily-food-list/';
 
-    createDailyFoodList(food: Food, servings: number): Observable<any>{
-        const body={
-            user: 1,
-            food: [food.id],
-            servings: servings,
-        }
-        return this.httpClient.post<any>(this.baseUrl, body);
-    }
+  constructor(private httpClient: HttpClient) {
+  }
+
+  createDailyFoodList(food: Food, servings: number): Observable<any> {
+    const body = {
+      user: 1,
+      food: food.id,
+      servings: servings,
+    };
+    return this.httpClient.post<any>(this.baseUrl, body);
+  }
+
+  listByDate(date): Observable<any> {
+    return this.httpClient.get<any>(this.baseUrl, {params: {date}});
+  }
+
+  removeFromList(id): Observable<any>{
+    return this.httpClient.delete(this.baseUrl + id);
+  }
 }

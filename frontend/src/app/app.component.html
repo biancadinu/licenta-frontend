@@ -9,10 +9,10 @@
     <div class="container">
 
         <div class="logo">
-            <a href="#" >Dr.Anemia</a> 
+            <a href="#" >Dr.Anemia</a>
         </div>
         <span class="menu-spacer"></span>
-        
+
         <mat-toolbar class="toolbar">
             <button mat-raised-button routerLink="" routerLinkActive #rla="routerLinkActive" class="page">Home</button>
             <button mat-raised-button routerLink="about" routerLinkActive="active" class="page">About</button>
@@ -28,7 +28,7 @@
             </div>
             <div *ngIf="isUserLoggedIn()">
                 <button mat-raised-button (click)="logout()" class="button">Log Out</button>
-                <button mat-raised-button class="button">Profile</button>
+                <button mat-raised-button routerLink="profile" routerLinkActive="active" class="button">Profile</button>
             </div>
 
         </mat-toolbar>
@@ -40,9 +40,9 @@
 <footer>
     <div class="boxes">
         <div class="logo_mic">
-            <a href="#" >Dr.Anemia</a> 
+            <a href="#" >Dr.Anemia</a>
         </div>
-        <div class="box"> 
+        <div class="box">
             <a href="http://terms&conditions">Terms and conditions</a>
             <a href="http://cookiespolicy">Cookies Policy</a>
             <a href="http://privacypolicy">Privacy Policy</a>

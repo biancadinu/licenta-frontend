@@ -1,0 +1,17 @@
+.container {
+  width: 60%;
+  margin: 0 auto;
+
+  .food-diary {
+    cursor: pointer;
+    border-bottom: 1px dotted #963846;
+
+    .food-facts {
+      display: inline-flex;
+    }
+
+    .capitalize {
+      text-transform: capitalize;
+    }
+  }
+}

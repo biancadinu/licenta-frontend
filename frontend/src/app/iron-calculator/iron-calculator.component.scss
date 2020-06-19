@@ -1,260 +1,299 @@
 
 body {
-    margin: 0;
-    font-family: 'Nunito','sans-serif';
-    font-size: 18px;
-    background-color: #FCF8F9;
-    display: flex;
-    flex-direction: column;
-}
-main{
-    background-color: #FCF8F9;
-    padding: 1em 0;
-    display: flex;
-    background-color: #FCF8F9;
-    flex-direction: column;
-
-    .header{
-        width: 80%;
-        height: 30%;
-        padding-top: 2em;
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-        justify-content: center;
-        align-items: center;
-        .iron-calc{
-            font-size: 2em;
-            color: #963846;
-            font-weight: bold;
-        }
-        .title-icon{
-            margin-right: .5em;
-            margin-left: .5em;
-            color: #963846;
-        }
-        .icons{
-            display: flex;
-            flex-direction: row;
-        }
-    }
-
-    .container{
-        width: 80%;
-        height: 30%;
-        padding: 2em 0;
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-        justify-content: center;
-        align-items: center;
-        
-        .title{
-            align-items: flex-start;
-            font-size: 1.5em;
-            color: #963846;
-            margin-bottom: 1em;
-        }
-        .description{
-            font-size: 0.7em;
-            padding-bottom: 2em;
-        }
-
-        .search_box{
-            width: 50%;
-            position: relative;
-        }
-
-        .under-search-bar{
-            width: 50%;
-
-            .view{
-                display: flex;
-                margin-top: 1em;
-
-                .nutritional-facts-button{
-                    margin: 0 auto;
-                }
-            }
-            .margin-class{
-                margin-bottom: 1em;
-
-                .title-amount{
-                    align-items: flex-start;
-                    font-size: 1.5em;
-                    color: #963846;
-                    margin-bottom: 1em;
-                    margin-right: 1em;
-                }
-
-                button{
-                    background-color: #963846;
-                    color: #FCF8F9;
-                    font-weight: bold;
-                    text-decoration: none;
-                    border-radius: 15px;
-                    margin-left: 2em;
-                    float: right;
-                    width: 20%;
-                }
-
-                input[type=number]::-webkit-inner-spin-button, 
-                input[type=number]::-webkit-outer-spin-button { 
-                    -webkit-appearance: none; 
-                }
-
-                .amount-number{
-                    width: 5em;
-                    height: 2em;
-                    margin-right: 2em;
-                    margin-left: 2em;
-                    border-radius: 15px;
-                }
-
-                .serving{
-                    margin-right: 2em;
-                }
-            }
-
-            .select{
-                margin-top:1em;
-                padding-top: 1em;
-                padding-bottom: 1em;
-                .food-container{
-                    margin-top: 1em;
-                    width: 100%;
-                    border-top: 2px solid #963846;
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    max-height: 300px;
-                    overflow: auto;
-                    .food-details{
-                        cursor: pointer;
-                        border-bottom: 1px dotted #963846;
-                        .food-facts{
-                            display: inline-flex;
-                        }
-                        .capitalize{
-                            text-transform: capitalize;
-                        }
-                    }
-                }
-            }
-
-            .tip{
-                font-size: 0.7em;
-            }
-
-            .consumption{
-                padding-top: 1em;
-                display: flex;
-                flex-direction: row;
-
-                .tab{
-                    background: rgb(247,234,236);
-                    display: flex;
-                    width: 100%;
-                    border-radius: 15px;
-                    border: 2px solid #fff;
-                    align-items: center;
-                    justify-content: center;
-                    .consumption-info{
-                        display: flex;
-                        flex-direction: row;
-                        width: 100%;
-                        justify-content: space-around;
-                        color: #963846;
-                        .calories{
-                            font-size: 2em;
-                        }
-    
-                        .iron{
-                            font-size: 2em
-                        }
-                    }
-                }
-            }
-
-            .your-food{
-                padding-top: 1em;
-                padding-bottom: 1em;
-                
-                .picked-food-container{
-                    width: 50%;
-                    padding: .5em;
-                    background-color: rgb(247,234,236);
-                    border-radius: 15px;
-                    border: 2px solid #fff;
-                    display: flex;
-                    flex-direction: column;
-                    .food-facts{
-                        display: inline-flex;
-                    }
-                    .capitalize{
-                        text-transform: capitalize;
-                    }
-                }
-            }
-        }
-
-        .search_box input[type="text"]{
-            width: 100%;
-            padding: 20px;
-            padding-right: 60px;
-            box-sizing: border-box;
-            background: rgb(247,234,236);
-            border: 2px solid #fff;
-            border-radius: 10px;
-            font-size: 18px;
-            color: #2A363B;
-            outline: none;
-        }
-
-        .search{
-            position: absolute;
-            top: 60%;
-            transform: translateY(-50%);
-            right: 25px;
-            color: #2A363B;
-            font-size: 25px;
-          }
-          
-          ::-webkit-input-placeholder {
-            /* Chrome/Opera/Safari */
-            color: #2A363B;
-          }
-          ::-moz-placeholder {
-            /* Firefox 19+ */ 
-            color: #2A363B;
-          }
-          :-ms-input-placeholder {
-            /* IE 10+ */
-            color: #2A363B;
-          }
-          
-          @media screen and (max-width: 425px){
-            .search_box{
-              width: 95%;
-            }
-          }
-
-
-    }
-
-    .footer-container{
-
-        width: 45%;
-        height: 30%;
-        padding-bottom: 1em;
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-        justify-content: center;
-    }
+  margin: 0;
+  font-family: 'Nunito', 'sans-serif';
+  font-size: 18px;
+  background-color: #FCF8F9;
+  display: flex;
+  flex-direction: column;
 }
 
-.footer{
+main {
+  background-color: #FCF8F9;
+  padding: 1em 0;
+  display: flex;
+  background-color: #FCF8F9;
+  flex-direction: column;
+
+  .header {
     width: 80%;
     height: 30%;
+    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+
+    .iron-calc {
+      font-size: 2em;
+      color: #963846;
+      font-weight: bold;
+    }
+
+    .title-icon {
+      margin-right: .5em;
+      margin-left: .5em;
+      color: #963846;
+    }
+
+    .icons {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .container {
+    width: 80%;
+    height: 30%;
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+      align-items: flex-start;
+      font-size: 1.5em;
+      color: #963846;
+      margin-bottom: 1em;
+    }
+
+    .description {
+      font-size: 0.7em;
+      padding-bottom: 2em;
+    }
+
+    .search_box {
+      width: 50%;
+      position: relative;
+    }
+
+    .under-search-bar {
+      width: 50%;
+
+      .view {
+        display: flex;
+        margin-top: 1em;
+
+        .nutritional-facts-button {
+          margin: 0 auto;
+        }
+      }
+
+      .margin-class {
+        margin-bottom: 1em;
+
+        .title-amount {
+          align-items: flex-start;
+          font-size: 1.5em;
+          color: #963846;
+          margin-bottom: 1em;
+          margin-right: 1em;
+        }
+
+        button {
+          background-color: #963846;
+          color: #FCF8F9;
+          font-weight: bold;
+          text-decoration: none;
+          border-radius: 15px;
+          margin-left: 2em;
+          float: right;
+          width: 20%;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+        }
+
+        .amount-number {
+          width: 5em;
+          height: 2em;
+          margin-right: 2em;
+          margin-left: 2em;
+          border-radius: 15px;
+        }
+
+        .serving {
+          margin-right: 2em;
+        }
+      }
+
+      .select {
+        margin-top: 1em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+
+        .food-container {
+          margin-top: 1em;
+          width: 100%;
+          border-top: 2px solid #963846;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          max-height: 300px;
+          overflow: auto;
+
+          .name-fav {
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+          }
+
+          .fav-buttons{
+            margin-top: 1em;
+          }
+
+          .star {
+            margin-right: 1em;
+            font-size: 2em;
+            cursor: pointer;
+          }
+
+          .star-yellow {
+            margin-right: 1em;
+            font-size: 2em;
+            cursor: pointer;
+            color: orange;
+          }
+
+          .food-details {
+            cursor: pointer;
+            border-bottom: 1px dotted #963846;
+
+            .food-facts {
+              display: inline-flex;
+            }
+
+            .capitalize {
+              text-transform: capitalize;
+            }
+          }
+        }
+      }
+
+      .tip {
+        font-size: 0.7em;
+      }
+
+      .consumption {
+        padding-top: 1em;
+        display: flex;
+        flex-direction: row;
+
+        .tab {
+          background: rgb(247, 234, 236);
+          display: flex;
+          width: 100%;
+          border-radius: 15px;
+          border: 2px solid #fff;
+          align-items: center;
+          justify-content: center;
+
+          .consumption-info {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-around;
+            color: #963846;
+
+            .calories {
+              font-size: 2em;
+            }
+
+            .iron {
+              font-size: 2em
+            }
+          }
+        }
+      }
+
+      .your-food {
+        padding-top: 1em;
+        padding-bottom: 1em;
+
+        .picked-food-container {
+          width: 50%;
+          padding: .5em;
+          background-color: rgb(247, 234, 236);
+          border-radius: 15px;
+          border: 2px solid #fff;
+          display: flex;
+          flex-direction: column;
+
+          .food-facts {
+            display: inline-flex;
+          }
+
+          .capitalize {
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+
+    .search_box input[type="text"] {
+      width: 100%;
+      padding: 20px;
+      padding-right: 60px;
+      box-sizing: border-box;
+      background: rgb(247, 234, 236);
+      border: 2px solid #fff;
+      border-radius: 10px;
+      font-size: 18px;
+      color: #2A363B;
+      outline: none;
+    }
+
+    .search {
+      position: absolute;
+      top: 60%;
+      transform: translateY(-50%);
+      right: 25px;
+      color: #2A363B;
+      font-size: 25px;
+    }
+
+    ::-webkit-input-placeholder {
+      /* Chrome/Opera/Safari */
+      color: #2A363B;
+    }
+
+    ::-moz-placeholder {
+      /* Firefox 19+ */
+      color: #2A363B;
+    }
+
+    :-ms-input-placeholder {
+      /* IE 10+ */
+      color: #2A363B;
+    }
+
+    @media screen and (max-width: 425px) {
+      .search_box {
+        width: 95%;
+      }
+    }
+
+
+  }
+
+  .footer-container {
+
+    width: 45%;
+    height: 30%;
+    padding-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
+
+.footer {
+  width: 80%;
+  height: 30%;
 }

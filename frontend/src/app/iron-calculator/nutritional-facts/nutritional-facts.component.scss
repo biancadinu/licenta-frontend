@@ -1,0 +1,47 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+  .header{
+    display: flex;
+    flex-direction: column;
+    .header-title{
+      font-weight: bold;
+      margin: 0 auto;
+      text-transform: capitalize;
+      margin-bottom: 10px;
+    }
+    .subtitle{
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+  }
+  .line{
+    width: 100%;
+    border-bottom: 2px solid #963846;
+    margin-top: 20px;
+  }
+
+  .daily-value{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .calories{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .facts-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    .fact-numbers{
+      width: 100px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
