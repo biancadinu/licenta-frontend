@@ -1,14 +1,13 @@
-import {Component, OnInit} from '@angular/core';
-import {faCarrot} from '@fortawesome/free-solid-svg-icons';
-import {faBirthdayCake} from '@fortawesome/free-solid-svg-icons';
-import {faPizzaSlice} from '@fortawesome/free-solid-svg-icons';
-import {faFish} from '@fortawesome/free-solid-svg-icons';
-import {faSearch} from '@fortawesome/free-solid-svg-icons';
-import {MatDialog, MatDialogConfig} from '@angular/material';
-import {NutritionalFactsComponent} from './nutritional-facts/nutritional-facts.component';
-import {FoodApiService} from '../_services/food.service';
-import {Food} from '../model/food.model';
-import {DailyFoodListApiService} from '../_services/daily-food-list.service';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+import { faBirthdayCake, faCarrot, faFish, faPizzaSlice, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { ToastrService } from 'ngx-toastr';
+import { Food } from '../model/food.model';
+import { User } from '../model/user.model';
+import { DailyFoodListApiService } from '../_services/daily-food-list.service';
+import { FoodApiService } from '../_services/food.service';
+import { UserService } from '../_services/user.service';
+import { NutritionalFactsComponent } from './nutritional-facts/nutritional-facts.component';
 
 @Component({
   selector: 'app-iron-calculator',
@@ -25,11 +24,15 @@ export class IronCalculatorComponent implements OnInit {
   foodList: Food[];
   pickedFood: Food;
   servings = 0;
+  dailyFoodList;
+  currentUser: User[];
 
   constructor(
     private dialog: MatDialog,
     private foodService: FoodApiService,
-    private dailyFoodListService: DailyFoodListApiService) {
+    private dailyFoodListService: DailyFoodListApiService,
+    private toastrService: ToastrService,
+    private userService: UserService) {
   }
 
   ngOnInit() {
@@ -62,6 +65,23 @@ export class IronCalculatorComponent implements OnInit {
 
   public addToDailyFoodList() {
     this.dailyFoodListService.createDailyFoodList(this.pickedFood, this.servings).subscribe();
+    const dateTime = new Date();
+    console.log(dateTime.getUTCDay());
+    this.userService.getUserDetails().subscribe(currentUserData =>{
+      console.log(currentUserData)
+      const date = dateTime.getFullYear() + '-' + (1 + dateTime.getMonth()) + '-' + dateTime.getUTCDate();
+      this.dailyFoodListService.listByDate(date).subscribe(data =>{
+        const ironRemaining = currentUserData[0].iron_intake - data[0]['total_iron']
+        console.log(data[0]['total_iron']);
+        console.log(currentUserData)
+        if (ironRemaining > 0){
+          this.toastrService.success('You have ' + ironRemaining + ' mg of iron left to consume for today');
+        }
+        else{
+          this.toastrService.success('You hit your total iron intake for today');
+        }
+      });
+    });
   }
 
   public addToFav(food) {

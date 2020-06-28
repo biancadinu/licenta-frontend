@@ -1,0 +1,34 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+    margin-bottom: 10em;
+}
+
+.create{
+    font-size: large;
+    margin: 0 auto;
+    padding-bottom: 2em;
+}
+.text-editor-container{
+    width: 80%;
+    margin-bottom: 3em;
+}
+.mat-form-field {
+    width: 30vw;
+}
+.title-container{
+    display: flex;
+    align-items: center;
+    margin-bottom: 3%;
+}
+
+.title{
+    margin-right: 5%;
+}
+
+.mat-button{
+    background-color: #963846;
+}
+  

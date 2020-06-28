@@ -2,4 +2,6 @@
     <div *ngFor="let recipe of recipes">
         <app-recipe [recipe]=recipe></app-recipe>
     </div>
+
+    <button mat-raised-button routerLink="add-recipes" routerLinkActive="active">Add Recipes</button>
 </div>

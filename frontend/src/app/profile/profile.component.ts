@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {DailyFoodListApiService} from '../_services/daily-food-list.service';
+import { Component, OnInit } from '@angular/core';
+import { DailyFoodListApiService } from '../_services/daily-food-list.service';
 
 @Component({
   selector: 'app-profile',
@@ -21,7 +21,9 @@ export class ProfileComponent implements OnInit {
   }
 
   removeFromDaily(food) {
-    this.foodList.pop(food);
-    this.dailyFoodListApiService.removeFromList(food.id).subscribe(() => console.log('da'));
+    console.log(this.foodList)
+    this.dailyFoodListApiService.removeFromList(food.id).subscribe(() => {
+      this.foodList.pop(food);
+    });
   }
 }

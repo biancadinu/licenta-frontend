@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {environment} from '../../environments/environment';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {Recipe} from '../model/recipe.model';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
+import { Recipe } from '../model/recipe.model';
 
 @Injectable()
 export class RecipeApiService {
@@ -21,5 +21,9 @@ export class RecipeApiService {
 
   removeFav(recipeId): Observable<any> {
     return this.httpClient.delete<any>(this.baseUrl + recipeId + '/remove-favorite/', {});
+  }
+
+  createRecipe(recipeData): Observable<any> {
+    return this.httpClient.post<any>(environment.baseUrl + 'create-recipe/', recipeData);
   }
 }

@@ -1,12 +1,13 @@
-import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import {AboutComponent} from './about/about.component';
-import {SymptomsComponent} from './symptoms/symptoms.component';
-import {IronCalculatorComponent} from './iron-calculator/iron-calculator.component';
-import {RecipesComponent} from './recipes/recipes.component';
-import {RecipeDetailsComponent} from './recipes/recipe-details/recipe-details.component';
-import {ProfileComponent} from './profile/profile.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
+import { AddRecipeComponent } from './add-recipe/add-recipe.component';
+import { HomeComponent } from './home/home.component';
+import { IronCalculatorComponent } from './iron-calculator/iron-calculator.component';
+import { ProfileComponent } from './profile/profile.component';
+import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.component';
+import { RecipesComponent } from './recipes/recipes.component';
+import { SymptomsComponent } from './symptoms/symptoms.component';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'iron-calculator', component: IronCalculatorComponent},
   {path: 'recipes', component: RecipesComponent},
   {path: 'recipe/:id', component: RecipeDetailsComponent},
-  {path: 'profile', component: ProfileComponent}
+  {path: 'profile', component: ProfileComponent},
+  {path: 'add-recipes', component: AddRecipeComponent}
 ];
 
 @NgModule({

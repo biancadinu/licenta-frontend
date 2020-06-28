@@ -1,0 +1,47 @@
+
+<span class="create"> Create your own Recipe</span>
+<div class="container">
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+        <div class="title-container">
+            <span class="title">Name: </span>
+            <mat-form-field>
+                <input matInput type="text" formControlName="name" placeholder="Title" name="name" id="name">
+             </mat-form-field>
+        </div>
+        <div class="title-container">
+            <span class="title">Duration: </span>
+            <mat-form-field>
+                <input matInput type="text" formControlName="duration" placeholder="Duration" name="duration" id="duration">
+             </mat-form-field>
+        </div>
+        <div class="title-container">
+            <span class="title">Portions: </span>
+            <mat-form-field>
+                <input matInput type="text" formControlName="portion" placeholder="Portions" name="portion" id="portion">
+             </mat-form-field>
+        </div>
+        <div class="title-container">
+            <span class="title">Total Iron: </span>
+            <mat-form-field>
+                <input matInput type="text" formControlName="total_iron" placeholder="Total Iron" name="totalIron" id="totalIron">
+             </mat-form-field>
+        </div>
+        <div class="title-container">
+            <span class="title">Image: </span>
+                <input
+                style="display: none"
+                type="file" (change)="onFileChanged($event)"
+                #fileInput>
+                <button mat-button (click)="fileInput.click()">Select File</button>
+        </div>
+        <span class="title">Ingredients: </span>
+        <div class="text-editor-container">
+            <angular-editor formControlName="ingredients" placeholder="Ingredients" id="content" [config]="editorConfig"></angular-editor>
+        </div>
+        <span class="title">Recipe: </span>
+        <div class="text-editor-container">
+            <angular-editor formControlName="description" placeholder="Recipe" id="description" [config]="editorConfig"></angular-editor>
+        </div>
+    <button type="submit" [disabled]="!recipeForm.valid" mat-button class="dialog-option">Add recipe</button>
+    </form>
+</div>
