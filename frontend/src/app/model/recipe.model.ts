@@ -7,4 +7,5 @@ export interface Recipe{
     pictures: string;
     total_iron: number;
     is_favorite: boolean;
+    ingredients: string;
 }

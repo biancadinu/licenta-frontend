@@ -82,7 +82,10 @@ export class SymptomsComponent implements OnInit {
     this.isResults = true;
 
     if(this.formGroup.controls.symptoms.value.length >= 2){
-      this.doctor="You have " + this.formGroup.controls.symptoms.value.length + " symptoms selected. You should see a doctor!";
+      this.doctor="You have " + this.formGroup.controls.symptoms.value.length + " symptoms selected. We recommend you to pay a visit to your doctor.";
+    }
+    else{
+      this.doctor="You have " + this.formGroup.controls.symptoms.value.length + " symptom selected. Nonetheless we always recommend you to pay regular visits to your doctor.";
     }
 
     if(this.currentUser){

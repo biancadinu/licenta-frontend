@@ -9,10 +9,10 @@
                         You’re about to use a short (3 min), safe and anonymous anemia checkup. Your answers will be carefully analyzed and you’ll learn if you are in really need of a specialist.
                     </p>
                 </span>
-                <img src="../../assets/symptom_guy.png">
+                <img class="girl" src="../../assets/symptom_guy.png">
             </div>
             <div>
-                <button mat-button matStepperNext>Next</button>
+                <button class="form-button" mat-button matStepperNext>Next</button>
             </div>
         </mat-step>
         <mat-step [stepControl]="formGroup">
@@ -36,8 +36,8 @@
                     </form>
                 </div>
                 <div class="choices-buttons">
-                    <button mat-button matStepperPrevious>Back</button>
-                    <button mat-button [disabled]="formGroup.controls.gender.invalid" (click)="goNextGender()">Next</button>
+                    <button class="form-button" mat-button matStepperPrevious>Back</button>
+                    <button class="form-button" mat-button [disabled]="formGroup.controls.gender.invalid" (click)="goNextGender()">Next</button>
                 </div>
             </div>
             <div *ngIf="age" class="age">
@@ -53,8 +53,8 @@
                     </mat-slider>
                 </form>
 
-                <button (click)="goBackAge()" mat-button >Back</button>
-                <button mat-button matStepperNext>Next</button>
+                <button class="form-button" (click)="goBackAge()" mat-button >Back</button>
+                <button class="form-button" mat-button matStepperNext>Next</button>
             </div>
         </mat-step>
         <mat-step  [stepControl]="formGroup">
@@ -126,8 +126,8 @@
 
             </div>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
-                <button mat-button [disabled]="formGroup.controls.statements.invalid" matStepperNext>Next</button>
+                <button class="form-button" mat-button matStepperPrevious>Back</button>
+                <button class="form-button" mat-button [disabled]="formGroup.controls.statements.invalid" matStepperNext>Next</button>
             </div>
         </mat-step>
         <mat-step>
@@ -152,7 +152,7 @@
                   </mat-form-field>
             </div>
             <div>
-                <button mat-button matStepperPrevious>Back</button>
+                <button class="form-button" mat-button matStepperPrevious>Back</button>
             </div>
         </mat-step>
     </mat-vertical-stepper>

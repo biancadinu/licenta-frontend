@@ -9,7 +9,7 @@
         </div>
     
         <div class="buttons">
-            <button mat-raised-button [routerLink]="['/recipe', recipe.id, recipe]">Read</button>
+            <button class="recipe-button" mat-raised-button [routerLink]="['/recipe', recipe.id, recipe]">Read</button>
             <a *ngIf="!recipe.is_favorite" (click)="addToFav()"><mat-icon class="star">star_rate</mat-icon></a>
             <a *ngIf="recipe.is_favorite" (click)="removeFromFav()"><mat-icon class="star-yellow">star_rate</mat-icon></a>
 

@@ -9,6 +9,12 @@
 
     .stepper{
         background-color: transparent !important;
+        .form-button{
+            background: #963846 !important;
+            color: white;
+            border-radius: 15px;
+            margin-right: 10px;
+        }
         }
 }
 .result{
@@ -29,11 +35,16 @@
         margin:0 auto;
     }
 
+
 }
 
 .introduction{
     display: flex;
     flex-direction: row;
+
+    .girl{
+        width: 200px;
+    }
 }
 
 
@@ -56,8 +67,8 @@
         //height: 100vh;
         //width: 100vw;
         display: flex;
-        margin: 2em 0;
-        justify-content: center;
+        margin: 4em 0;
+        padding: 2em 0;
 
         input[type="radio"]{
             -webkit-appearance: none;
@@ -121,6 +132,7 @@
 }
 
 .statements{
+    padding-bottom: 2em;
     span{
         align-self: center;
     }
@@ -154,7 +166,7 @@
     margin-bottom: 5em;
     .contents{
         margin:0 auto;
-        font-size: 2em;
+        font-size: 1.5em;
     }
 }
 .footer{

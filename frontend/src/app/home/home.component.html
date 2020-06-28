@@ -5,7 +5,7 @@
             <span class="banner-title">A good life starts with what you eat.</span>
             <span class="banner-subtitle">Take control of your iron intake. Track your meals, check your symptoms and find out the latest news with Dr.Anemia.
             </span>
-            <button mat-raised-button routerLink="iron-calculator" routerLinkActive="active" class="button">Calculate your index</button>
+            <button *ngIf="isUserLoggedIn()" mat-raised-button routerLink="iron-calculator" routerLinkActive="active" class="button">Calculate your index</button>
         </div>
     </div>
 

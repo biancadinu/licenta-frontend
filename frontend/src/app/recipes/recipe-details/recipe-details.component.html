@@ -11,17 +11,17 @@
             </div>
             <div class="portions">
                 <fa-icon class="title-icon" [icon]="cheeseIcon"></fa-icon>
-                <span class="title-first">Portions : {{recipe.portions}}</span>
+                <span class="title-first">Portions : {{recipe.portion}}</span>
             </div>
             <div class="nutrition">
                 <fa-icon class="title-icon" [icon]="weightIcon"></fa-icon>
-                <span class="title-first">Calories : </span>
                 <span class="title-first"> Iron Intake : {{recipe.total_iron}}</span>
             </div>
         </div>
         <div class="description">
             <div class="ingredients">
                 <span class="border">Ingredients : </span>
+                <span >{{recipe.ingredients}}</span>
             </div>
             <div class="method">
                 <span class="border">Cooking method : </span>

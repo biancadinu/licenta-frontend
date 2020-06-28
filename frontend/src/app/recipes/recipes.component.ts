@@ -15,6 +15,7 @@ export class RecipesComponent implements OnInit {
 
   ngOnInit() {
     this.recipeService.listRecipes().subscribe(data => this.recipes = data);
+    console.log(this.recipes)
   }
 
 }

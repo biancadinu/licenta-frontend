@@ -5,6 +5,7 @@ import { AuthService, SocialUser, GoogleLoginProvider, FacebookLoginProvider, Li
 import { first } from 'rxjs/operators';
 import { AuthenticationService } from '../_services'
 import { MatDialogRef } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -42,7 +43,8 @@ export class LoginComponent implements OnInit {
       private router: Router,
       private authenticationService: AuthenticationService,
       private dialogRef: MatDialogRef<LoginComponent>,
-      private socialAuthService: AuthService,    
+      private socialAuthService: AuthService,
+      private toastr: ToastrService,
   ) {
       // redirect to home if already logged in
       if (this.authenticationService.currentUserValue) { 
@@ -86,6 +88,7 @@ export class LoginComponent implements OnInit {
                   this.error = error;
                   this.loading = false;
               });
+
   }
 
   exitDialog(){

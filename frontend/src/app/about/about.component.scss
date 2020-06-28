@@ -21,6 +21,7 @@ main {
     flex-direction: row;
     margin: 0 auto;
     margin-bottom: 1em;
+    font-size: 25px;
 
     .text-container {
       overflow: hidden;
@@ -31,6 +32,15 @@ main {
     }
 
 
+  }
+  
+  .down{
+    display: flex;
+    
+    .about{
+      width: 70%;
+      margin: 0 auto;
+    }
   }
 
   .container {

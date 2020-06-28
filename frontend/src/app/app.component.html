@@ -7,18 +7,15 @@
     </div>
 
     <div class="container">
-
-        <div class="logo">
-            <a href="#" >Dr.Anemia</a>
-        </div>
+            <img class="logo" src="../assets/logo.svg">
         <span class="menu-spacer"></span>
 
         <mat-toolbar class="toolbar">
             <button mat-raised-button routerLink="" routerLinkActive #rla="routerLinkActive" class="page">Home</button>
             <button mat-raised-button routerLink="about" routerLinkActive="active" class="page">About</button>
             <button mat-raised-button routerLink="symptoms" routerLinkActive="active" class="page">Check Your Symptoms</button>
-            <button mat-raised-button routerLink="iron-calculator" routerLinkActive="active" class="page">Iron Calculator</button>
-            <button mat-raised-button routerLink="recipes" routerLinkActive="active" class="page">Recipes</button>
+            <button *ngIf="isUserLoggedIn()" mat-raised-button routerLink="iron-calculator" routerLinkActive="active" class="page">Iron Calculator</button>
+            <button *ngIf="isUserLoggedIn()" mat-raised-button routerLink="recipes" routerLinkActive="active" class="page">Recipes</button>
             <button mat-raised-button routerLink="page_6" routerLinkActive="active" class="page">News and experts</button>
             <button mat-raised-button (click)="showContactDialog()" class="page">Contact</button>
 
